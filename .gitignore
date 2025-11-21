@@ -50,4 +50,4 @@ Thumbs.db
 
 # bundles
 bundles/*
-
+!bundles/.gitkeep
