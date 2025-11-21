@@ -1,0 +1,17 @@
+{
+  "host": "0.0.0.0",
+  "port": 9090,
+  "developer": {
+    "enable": true,
+    "panelResourceCacheDuration": 0,
+    "dashboardInstallBundles": false
+  },
+  "logging": {
+    "console": {
+      "level": "info"
+    },
+    "file": {
+      "enabled": false
+    }
+  }
+}

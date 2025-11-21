@@ -1,0 +1,23 @@
+services:
+  nodecg:
+    # 3.で作成したDockerfileを使用してイメージをビルド
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    # コンテナ名を設定
+    container_name: nodecg-dev
+    
+    # ポートマッピング: ホストの9090番ポートをコンテナの9090番ポートにマッピング
+    ports:
+      - "9090:9090"
+    
+    # ボリュームマッピング: 開発の核となる設定
+    # 1. ローカルのnodecg.jsonをコンテナの設定ファイルとして使用
+    # 2. ローカルのbundlesディレクトリをコンテナのbundlesディレクトリにマウント
+    volumes:
+      - ./nodecg.json:/app/nodecg/nodecg.json
+      - ./bundles:/app/nodecg/bundles
+    
+    # NodeCGはクラッシュすることがあるため、自動再起動を設定
+    restart: always
